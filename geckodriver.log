@@ -1,1 +1,52 @@
 1636679382645	geckodriver	INFO	Listening on 127.0.0.1:57124
+1637323294291	geckodriver	INFO	Listening on 127.0.0.1:60755
+1637323297273	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60756" "-no-remote" "-profile" "C:\\Users\\Acer\\AppData\\Local\\Temp\\rust_mozprofile5aSC8l"
+1637323297883	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Acer\\AppData\\Local\\Temp\\rust_mozprofile5aSC8l\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60756/devtools/browser/f7ee5ec1-5c21-4f8c-a517-81fc60bd8be7
+1637323301382	Marionette	INFO	Listening on port 60762
+1637323301526	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637323304911	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1637323536491	Marionette	INFO	Stopped listening on port 60762
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 8624, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637325090522	geckodriver	INFO	Listening on 127.0.0.1:55740
+1637325093565	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55741" "-no-remote" "-profile" "C:\\Users\\Acer\\AppData\\Local\\Temp\\rust_mozprofile1aU5cd"
+1637325094273	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Acer\\AppData\\Local\\Temp\\rust_mozprofile1aU5cd\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55741/devtools/browser/df5f1058-effc-4f4c-9682-01f0870fd69b
+1637325097489	Marionette	INFO	Listening on port 55746
+1637325097835	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637325101107	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1637325145501	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1637325247763	Marionette	INFO	Stopped listening on port 55746
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1637325375352	geckodriver	INFO	Listening on 127.0.0.1:55841
+1637325378422	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55842" "-no-remote" "-profile" "C:\\Users\\Acer\\AppData\\Local\\Temp\\rust_mozprofileRgf7Vn"
+1637325379096	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Acer\\AppData\\Local\\Temp\\rust_mozprofileRgf7Vn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55842/devtools/browser/9e9a1069-6bbe-4ef2-8199-4e079502be1d
+1637325383100	Marionette	INFO	Listening on port 55847
+1637325383296	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1637325386935	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript error: , line 0: NetworkError: A network error occurred.
+JavaScript error: , line 0: NetworkError: A network error occurred.
