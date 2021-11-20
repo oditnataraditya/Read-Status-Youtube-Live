@@ -14,13 +14,13 @@ import gspread
 from random import randint
 
 gc = gspread.oauth()
-data = gc.open_by_url("https://docs.google.com/spreadsheets/d/1dUQxJn1fOIw9dx1weECAuw7fGzlrTA8cbZcq3dTBhPk/edit#gid=1458472153") #Link checkpoint yang ingin diubah
-ws_stream = data.worksheet("Streamyard") # disesuaikan dengan checkpoint terakhir
+data = gc.open_by_url("https://docs.google.com/spreadsheets/d/1_4jwcqWav5Ci06iqqW3fe3C5BlH3oOBR3ZPMOgFi7ws/edit#gid=1165300294") #Link checkpoint yang ingin diubah
+ws_stream = data.worksheet("Cek Live") # disesuaikan dengan checkpoint terakhir
 vform = ws_stream.get_all_values()
-data = pd.DataFrame.from_records(vform, columns=vform[1])
-data= data[["Link YT - AKEM\n(Youtube)"]]
+data = pd.DataFrame.from_records(vform, columns=vform[0])
+data= data[["Youtube "]]
 
-data = data[262:323]
+data = data[127:200]
 # .drop(index=data.index[:2,], 
 #         axis=0, 
 #         inplace=True)
@@ -53,49 +53,49 @@ for link in link_youtube:
             ) #|(By.XPATH, '//*[@id="count"]/ytd-video-view-count-renderer/span[1]')
             live_stat = driver.find_element(By.XPATH,'//*[@id="info-strings"]/yt-formatted-string').text
             if search("Scheduled", str(live_stat)):
-                stat = "Belum memulai livestream"
+                stat = "Belum Live"
             elif search("Started", str(live_stat)):
-                stat = "Sedang livestream"
+                stat = "Sudah Live"
             else:
-                stat = "Sudah menjadi video"
+                stat = "Belum Live"
             status.append(stat)
-            desk = driver.find_element(By.XPATH, '//*[@id="description"]/yt-formatted-string').text
-            title = driver.find_element(By.XPATH, '//*[@id="container"]/h1/yt-formatted-string').text
-            exp = "^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*"
-            s = re.findall(exp,link)[0][-1]
-            thumb = f"https://i.ytimg.com/vi/{s}/maxresdefault.jpg"
-            deskripsi.append(desk)
-            thumbnail.append(thumb)
-            judul.append(title)
+            # desk = driver.find_element(By.XPATH, '//*[@id="description"]/yt-formatted-string').text
+            # title = driver.find_element(By.XPATH, '//*[@id="container"]/h1/yt-formatted-string').text
+            # exp = "^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*"
+            # s = re.findall(exp,link)[0][-1]
+            # thumb = f"https://i.ytimg.com/vi/{s}/maxresdefault.jpg"
+            # deskripsi.append(desk)
+            # thumbnail.append(thumb)
+            # judul.append(title)
         except:
             stat = 'Livestream youtube tidak ada'
             status.append(stat)
-            desk = "Tidak ada deskripsi"
-            title = "Tidak ada judul"
-            thumb = "Tidak ada thumbnail"
-            deskripsi.append(desk)
-            thumbnail.append(thumb)
-            judul.append(title)
+            # desk = "Tidak ada deskripsi"
+            # title = "Tidak ada judul"
+            # thumb = "Tidak ada thumbnail"
+            # deskripsi.append(desk)
+            # thumbnail.append(thumb)
+            # judul.append(title)
     except:
         stat = 'Tidak ada link youtube'
         status.append(stat)
-        desk = "Tidak ada deskripsi"
-        title = "Tidak ada judul"
-        thumb = "Tidak ada thumbnail"
-        deskripsi.append(desk)
-        thumbnail.append(thumb)
-        judul.append(title)
+        # desk = "Tidak ada deskripsi"
+        # title = "Tidak ada judul"
+        # thumb = "Tidak ada thumbnail"
+        # deskripsi.append(desk)
+        # thumbnail.append(thumb)
+        # judul.append(title)
 driver.quit()
 status_pd = {
-    "Status Youtube" : status,
-    "Deskripsi" : deskripsi,
-    "Judul" : judul,
-    "Gambar video" : thumbnail
+    "Status Youtube" : status
+    # "Deskripsi" : deskripsi,
+    # "Judul" : judul,
+    # "Gambar video" : thumbnail
 }
 data_rapi = pd.DataFrame(status_pd)
 list_rapi = data_rapi.to_numpy().tolist()
 headers_rapi = data_rapi.columns.tolist()
 dataupdate = [headers_rapi] + list_rapi
 
-ws_stream.update("F263", dataupdate)
+ws_stream.update("G127", dataupdate)
 print("Selesai")
